@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 2018_08_20_152655) do
   create_table "posts", force: :cascade do |t|
     t.string "post_title"
     t.string "post_content"
+    t.string "post_category"
+    t.string "author"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer "user_id"
@@ -39,6 +41,7 @@ ActiveRecord::Schema.define(version: 2018_08_20_152655) do
     t.string "email"
     t.datetime "birthday"
     t.string "password_hash"
+    t.string "allegiance"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["email"], name: "index_users_on_email", unique: true

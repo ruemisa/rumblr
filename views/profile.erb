@@ -1,0 +1,14 @@
+<h1> Welcome to your account </h1>
+
+<nav>
+    <ul>
+        <li><a href="/local">Local</a></li>
+        <li><a href="/global">Global</a></li>
+    </ul>
+</nav>
+
+<% if session[:user] == nil %>
+    <p> No one is logged in </p>
+<% elsif session[:user] != nil %>
+    <p> Welcome back, <%= session[:user].username %> </p>
+<% end %>

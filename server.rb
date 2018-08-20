@@ -1,19 +1,23 @@
 require 'sinatra'
 require 'sinatra/activerecord'
 require 'date'
+enable :sessions
 
 set :database, "sqlite3:rumblr.sqlite3"
 
 
-# landing with signup form
+# landing with sign-in form
 get '/' do
+    $users = User.all
+    $posts = Post.all
+    $comments = Comment.all
     erb :home
 end
 
 ##### LOGIN #####
 
 # login access
-post '/login' do
+post '/' do
     email = params['email']
     given_password = params['password']
     # do rest of login function here
@@ -44,9 +48,12 @@ post '/signup' do
         username: params['username'],
         email: params['email'],
         birthday: Date.parse(params['birthday']),
-        password: params['password']
+        password: params['password'],
+        allegiance: params['allegiance']
     )
-    redirect '/'
+    user.save
+    p user
+    redirect :profile
 end
 
 ##### LOG OUT #####
@@ -80,15 +87,17 @@ get '/local' do
 end
 
 # Adding new post to local forum
-post '/local' do
+post '/' do
     # do posting to local function here
     # do something conditional here to write to the correct local forum
+    p params
     post = Post.new(
         post_title: params['title'],
         post_content: params['content'],
-        create_at: Date.strptime(post.created_at, '%d-%m-%Y'),
-        update_at: Date.strptime(post.updated_at, '%d-%m-%Y')
+        # create_at: Date.strptime(post.created_at, '%d-%m-%Y'),
+        # update_at: Date.strptime(post.updated_at, '%d-%m-%Y')
     )
+    post.save
     redirect :local
 end
 
@@ -98,14 +107,22 @@ get '/global' do
 end
 
 # Posting to global forum
-post '/global' do
+get '/addpost' do
+    erb :addpost
+end
+
+post '/addpost' do
     # some posting capabilities here
+    p user = session[:user]
+    p params
     post = Post.new(
         post_title: params['title'],
-        post_content: params['content'],
-        create_at: Date.strptime(post.created_at, '%d-%m-%Y'),
-        update_at: Date.strptime(post.updated_at, '%d-%m-%Y')
+        author: user['username'],
+        post_category: params['category'],
+        post_content: params['content']
     )
+    post.save
+    p post
     redirect :global
 end
 
@@ -119,6 +136,12 @@ end
 patch '/global' do
     # some function
     redirect :global
+end
+
+# SETTINGS PAGE 
+
+get '/settings' do
+    erb :settings
 end
 
 require './models'

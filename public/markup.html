@@ -1,0 +1,67 @@
+<!-- SIGN UP FORM -->
+
+<form action="/signup" method="POST" autocomplete="off" class="sign-up">
+
+    <input type="text" name="first_name" placeholder="First name" required> <br>
+
+    <input type="text" name="last_name" placeholder="Last name" required> <br>
+
+    <input type="text" name="username" placeholder="Username" required> <br>
+    
+    <input type="email" name="email" placeholder="Email" required> <br>
+    
+    <input type="text" name="birthday" placeholder="DD/MM/YYYY" required> <br>
+    
+    <input type="password" name="password" placeholder="Password" required> <br>
+
+    <div class="team-choice"> 
+        <input type="radio" name="allegiance" value="air">
+        <input type="radio" name="allegiance" value="water">
+        <input type="radio" name="allegiance" value="earth">
+        <input type="radio" name="allegiance" value="fire">
+    </div>
+
+    <br>
+
+    <input type="submit" value="Sign Up">
+</form>
+
+<!-- LOG IN FORM -->
+
+<form action="/" method="POST" autocomplete="off" class="login">
+    
+    <input type="email" name="email" placeholder="Email" required> <br>
+    
+    <input type="password" name="password" placeholder="Password" required> <br>
+
+    <input type="submit" value="Log In">
+
+</form>
+
+
+<ul>
+    <li><a href="/login">Sign In</a></li>
+    <li><a href="/signup">Sign Up</a></li>
+    <li><a href="/">Sign Out</a></li>
+    <li><a href="/settings">Settings</a></li>
+
+</ul>
+
+<link rel="stylesheet" href="/main.css" type="text/css">
+
+<nav>
+    <ul>
+        <li><a href="/local">Local</a></li>
+        <li><a href="/global">Global</a></li>
+    </ul>
+</nav>
+
+<form action="/local" method="POST" class="post">
+
+    <label for="">Title</label> <br>
+    <input type="text" name="title"> <br>
+    <label for="">Content</label> <br>
+    <textarea name="content" id="" cols="30" rows="10" placeholder="text here"></textarea> <br>
+    <input type="submit" value="Submit">
+
+</form>
