@@ -11,9 +11,17 @@ class User < ActiveRecord::Base
         @password = Password.create(new_password)
         self.password_hash = @password
     end
+    has_many :posts, :comments
 end
 
+class Post < ActiveRecord::Base
+    belongs_to :user
+    has_many :comments
+end
 
+class Comment < ActiveRecord::Base
+    belongs_to :post, :user
+end
 
 # #comments
 # belongs_to :post, :user
