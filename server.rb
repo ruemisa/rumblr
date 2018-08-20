@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'sinatra/activerecord'
+require 'date'
 
 set :database, "sqlite3:rumblr.sqlite3"
 
