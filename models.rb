@@ -36,3 +36,5 @@ end
 # has_many :posts, :comments
 
 # '%d-%m-%Y'
+
+# , :foreign_key => 'user_id'

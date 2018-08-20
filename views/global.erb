@@ -10,7 +10,9 @@
 
 <h1> POSTS </h1>
     <% $posts.each do |post| %>
-<p> <%= post.post_title %> </p>
-<p> <%= post.author %> </p>
-
+        <% if post.post_category == 'global' %>
+        <h3> <%= post.post_title %> </h3>
+        <p> <%= post.author %> </p>
+        <p> <%= post.post_content %> </p>
+        <% end %>
     <% end %>

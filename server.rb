@@ -52,8 +52,8 @@ post '/signup' do
         allegiance: params['allegiance']
     )
     user.save
-    p user
-    redirect :profile
+    # p user
+    redirect '/'
 end
 
 ##### LOG OUT #####
@@ -86,27 +86,12 @@ get '/local' do
     erb :local
 end
 
-# Adding new post to local forum
-post '/' do
-    # do posting to local function here
-    # do something conditional here to write to the correct local forum
-    p params
-    post = Post.new(
-        post_title: params['title'],
-        post_content: params['content'],
-        # create_at: Date.strptime(post.created_at, '%d-%m-%Y'),
-        # update_at: Date.strptime(post.updated_at, '%d-%m-%Y')
-    )
-    post.save
-    redirect :local
-end
-
 # Accessing global forum
 get '/global' do
     erb :global
 end
 
-# Posting to global forum
+# Posting to forums
 get '/addpost' do
     erb :addpost
 end
@@ -123,7 +108,7 @@ post '/addpost' do
     )
     post.save
     p post
-    redirect :global
+    redirect :profile
 end
 
 # ADDING EDITING CAPABILITIES TO POSTING TO FORUMS
