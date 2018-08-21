@@ -18,12 +18,12 @@ end
 
 # login access
 post '/' do
-    email = params['email']
-    given_password = params['password']
+    @email = params['email']
+    @given_password = params['password']
     # do rest of login function here
-    user = User.find_by(email: email)
-    if user.password == given_password
-        session[:user] = user
+    @user = User.find_by(email: email)
+    if @user.password == @given_password
+        session[:user] = @user
         redirect :profile
     else
         p "Invalid Credentials"
@@ -42,7 +42,7 @@ end
 post '/signup' do
     p params
     # do sign up function here
-    user = User.new(
+    @user = User.new(
         first_name: params['first_name'],
         last_name: params['last_name'],
         username: params['username'],
@@ -51,10 +51,10 @@ post '/signup' do
         password: params['password'],
         allegiance: params['allegiance']
     )
-    user.save 
+    @user.save 
     $users = User.all
-    if user.save 
-        session[:user] = user
+    if @user.save 
+        session[:user] = @user
         redirect :profile
     else
         redirect '/'
@@ -66,6 +66,7 @@ end
 get '/logout' do
     # do log out function here
     session[:user] = nil
+    session.clear
     p "user has logged out"
     redirect '/'
 end
@@ -111,22 +112,22 @@ end
 
 post '/addpost' do
     # some posting capabilities here
-    user = session[:user]
+    @user = session[:user]
     p params
-    post = Post.new(
+    @post = Post.new(
         post_title: params['title'],
-        author: user['username'],
-        theme: user['allegiance'],
+        author: @user['username'],
+        theme: @user['allegiance'],
         post_category: params['category'],
         post_content: params['content'],
-        user_id: user['id']
+        user_id: @user['id']
     )
-    post.save
+    @post.save
     $posts = Post.all
     p post
-    if post.post_category == 'local'
+    if @post.post_category == 'local'
         redirect :local
-    elsif post.post_category == 'global'
+    elsif @post.post_category == 'global'
         redirect :global
     else 
         p 'No Posts Available'
@@ -146,19 +147,16 @@ patch '/global' do
     redirect :global
 end
 
-# SETTINGS PAGE 
+# DELETING ACCOUNT
 
 get '/settings' do
     erb :settings
 end
 
-# DELETING ACCOUNT
-
-get '/delete' do
-    erb :delete
-end
-
-post '/delete' do
+post '/settings' do
+    @current_user = User.find(session[:user])
+    @current_user.destroy
+    session.clear
     redirect '/'
 end
 
