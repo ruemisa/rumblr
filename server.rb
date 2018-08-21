@@ -4,8 +4,9 @@ require 'date'
 enable :sessions
 
 require 'active_record'
-# set :database, "sqlite3:rumblr.sqlite3"
-ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'])
+
+set :database, "sqlite3:rumblr.sqlite3"
+# ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'])
 
 # landing with sign-in form
 get '/' do

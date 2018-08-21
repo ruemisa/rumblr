@@ -9,12 +9,17 @@
 
 <a href="/addpost"> New Post </a>
 
-<h1> POSTS </h1>
-    <% $posts.each do |post| %>
-        <% if post.post_category == 'local' %>
-        <h3> <%= post.post_title %> </h3>
-        <p> <%= post.author %> </p>
-        <p> <%=post.theme %> </p>
-        <p> <%= post.post_content %> </p>
+
+<% @current_user = session[:user] %>
+<% @allegiance = @current_user.allegiance %>
+<h1> <%= @allegiance %> POSTS </h1>    
+        <% $posts.each do |post| %>
+            <% if post.post_category == 'local' && post.theme == @allegiance %>
+            <h3> <%= post.post_title %> </h3>
+            <p> <%= post.author %> </p>
+            <p> <%=post.theme %> </p>
+            <p> <%= post.post_content %> </p>
+            <% else %>
+                <p> No community posts. </p>
+            <% end %>
         <% end %>
-    <% end %>
