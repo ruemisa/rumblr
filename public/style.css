@@ -1,9 +1,21 @@
 :root {
+    /* Content Spacing */
     --col-4: repeat(4, 1fr);
     --col-3: repeat(3, 1fr);
     --col-2: repeat(2, 1fr);
 
     --grid-block: 5rem;
+
+    /* Colors */
+
+    /* Landing */
+
+    --landing-head-foot: rgba(0, 0, 0, .85);
+    --landing-text: rgba(249, 249, 249, 1);
+    --landing-outline: rgba(116, 81, 141, 1);
+
+    --log-in-body: rgba(254, 254, 254, .3);
+
 }
 
 * {
@@ -45,30 +57,141 @@ p {
 header {
     grid-area: header;
     height: 20vh;
-    border: 1px solid red;
+    background-color: var(--landing-head-foot);
+    color: var(--landing-text);
+    position: relative;
 }
 
+header h1 {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    font-size: 5rem;
+    letter-spacing: 1rem;
+    text-shadow: 2px 4px 5px var(--landing-text);
+}
 
+header nav {
+    position: absolute;
+    bottom: 3rem;
+    right: 2rem;
+}
+
+header nav li {
+    display: inline;
+    padding: .5rem 1.5rem;
+}
+
+#blue {
+    color: rgba(0, 89, 132, .8);
+}
+
+#green {
+    color: rgba(0, 80, 13, 1);
+}
+
+#red {
+    color: rgba(125, 0, 0, 1);
+}
 /***********************************/
 /**************MAIN*****************/
 /***********************************/
 
 .main-container {
     grid-area: main;
-    padding-bottom: var(--grid-block);
 }
 
 /* HERO */
 
-.hero, .hero * {
-    border: 1px solid red;
-}
-
 .hero {
     background: center / cover no-repeat url('/images/four-benders.jpg');
     height: 90vh;
+    position: relative;
 }
 
+.hero-phrase {
+    color: var(--landing-text);
+    position: absolute;
+    top: 25rem;
+    left: 4rem;
+}
+
+/* LOGIN */
+
+.login {
+    position: absolute;
+    top: 10rem;
+    right: 10rem;
+    width: 25vw;
+    height: 52vh;
+    background-color: var(--log-in-body);
+    border-top-left-radius: 5rem;
+}
+
+.login h2 {
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 2rem;
+    letter-spacing: .3rem; 
+    background-color: rgba(0, 0, 0, .8);
+    color: var(--landing-text);
+    border-top-left-radius: 5rem;
+
+}
+
+.login p {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--landing-text);
+}
+
+.login-content {
+    text-align: center;
+    margin-top: 1rem;
+    padding: 1rem;
+}
+
+.login-content * {
+    margin-bottom: 1.5rem;
+    font-family: 'Julee', cursive;
+}
+
+.login-content input {
+    padding: .5rem;
+    width: 70%;
+    background-color: inherit;
+    color: var(--landing-text);
+    border-style: none;
+    border-bottom: 2px solid #fafafa;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.login-content input::placeholder {
+    color: var(--landing-text);
+    font-family: 'Julee', cursive;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.login-content input:focus {
+    outline-style: none;
+}
+
+.login-content button {
+    margin-top: 1rem;
+    padding: 1rem;
+    width: 25%;
+    font-weight: 700;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    background-color: rgba(27, 27, 17, .8);
+    color: var(--landing-text);
+    border-style: none;
+    border-radius: .5rem;
+}
 
 /***********************************/
 /***************FOOTER**************/
@@ -76,4 +199,22 @@ header {
 
 footer {
     grid-area: footer;
+    background-color: var(--landing-head-foot);
+    color: var(--landing-text);
+    position: relative;
+    text-align: center;
+}
+
+footer nav {
+    margin: 2rem 0;
+}
+
+footer nav li {
+    display: inline;
+    padding: .5rem 1.5rem;
+}
+
+footer span {
+    font-size: .8rem;
+    margin-bottom: 2rem;
 }

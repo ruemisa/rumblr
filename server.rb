@@ -27,7 +27,7 @@ post '/' do
         redirect :profile
     else
         p "Invalid Credentials"
-        redirect :signup
+        redirect '/'
     end
 end
 
@@ -111,7 +111,7 @@ end
 
 post '/addpost' do
     # some posting capabilities here
-    p user = session[:user]
+    user = session[:user]
     p params
     post = Post.new(
         post_title: params['title'],
