@@ -1,25 +1,35 @@
-<form action="/signup" method="POST" autocomplete="off" class="sign-up">
+<div class="sign-up-page">
 
-    <input type="text" name="first_name" placeholder="First name" required> <br>
+    <form action="/signup" method="POST" autocomplete="off" class="sign-up-form">
 
-    <input type="text" name="last_name" placeholder="Last name" required> <br>
+        <h2> Create Account </h2>
+        <p class="highlight-red" id="form-emphasis"> All fields are required </p>
 
-    <input type="text" name="username" placeholder="Username" required> <br>
-    
-    <input type="email" name="email" placeholder="Email" required> <br>
-    
-    <input type="date" name="birthday" placeholder="DD/MM/YYYY" required> <br>
-    
-    <input type="password" name="password" placeholder="Password" required> <br>
+        <div class="signup-content">
+            <input type="text" name="first_name" placeholder="First name" required> <br>
 
-    <div class="team-choice"> 
-        <input type="radio" name="allegiance" value="air"> Air <br>
-        <input type="radio" name="allegiance" value="water"> Water <br>
-        <input type="radio" name="allegiance" value="earth"> Earth <br>
-        <input type="radio" name="allegiance" value="fire"> Fire <br>
-    </div>
+            <input type="text" name="last_name" placeholder="Last name" required> <br>
 
-    <br>
+            <input type="text" name="username" placeholder="Username" required> <br>
+            
+            <input type="email" name="email" placeholder="Email" required> <br>
+            
+            <input type="date" name="birthday" placeholder="DD/MM/YYYY" required> <br>
+            
+            <input type="password" name="password" placeholder="Password" required> <br>
 
-    <button type="submit"> Sign Up </button>
-</form>
+            <div class="team-choice"> 
+                <p> Choose your element type: </p>
+                <ul>
+                    <li><input type="radio" name="allegiance" value="air"> Air </li>
+                    <li><input type="radio" name="allegiance" value="water"> Water </li>
+                    <li><input type="radio" name="allegiance" value="earth"> Earth </li>
+                    <li><input type="radio" name="allegiance" value="fire"> Fire </li>
+                </ul>
+            </div>
+
+            <button type="submit"> Sign Up </button>
+        </div>
+    </form>
+
+</div>

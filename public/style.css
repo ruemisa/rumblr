@@ -50,6 +50,23 @@ p {
     'footer footer footer footer';
 }
 
+.highlight-blue {
+    color: rgba(0, 89, 132, .8);
+}
+
+.highlight-green {
+    color: rgba(0, 80, 13, 1);
+}
+
+.highlight-red {
+    color: rgba(125, 0, 0, 1);
+}
+
+.link-text {
+    color: #ff6f00;
+    font-weight: 700;
+}
+
 /***********************************/
 /***************HEADER**************/
 /***********************************/
@@ -82,17 +99,10 @@ header nav li {
     padding: .5rem 1.5rem;
 }
 
-#blue {
-    color: rgba(0, 89, 132, .8);
+header nav li:hover {
+    color: #ff6f00;
 }
 
-#green {
-    color: rgba(0, 80, 13, 1);
-}
-
-#red {
-    color: rgba(125, 0, 0, 1);
-}
 /***********************************/
 /**************MAIN*****************/
 /***********************************/
@@ -113,7 +123,17 @@ header nav li {
     color: var(--landing-text);
     position: absolute;
     top: 25rem;
-    left: 4rem;
+    left: 3.5rem;
+    letter-spacing: .3rem;
+}
+
+.hero-phrase h1 {
+    font-size: 3.8rem;
+    margin-bottom: 1rem;
+}
+
+.hero-phrase p {
+    font-size: 2rem;
 }
 
 /* LOGIN */
@@ -142,7 +162,8 @@ header nav li {
 
 .login p {
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    letter-spacing: .1rem;
     color: var(--landing-text);
 }
 
@@ -193,6 +214,65 @@ header nav li {
     border-radius: .5rem;
 }
 
+.login-content button:hover {
+    cursor: pointer;
+    background-color: var(--landing-text);
+    color:  rgba(27, 27, 17, .8);
+    transition: .6s;
+}
+
+/* SIGN UP PAGE */
+
+.sign-up-page {
+    background: center / cover no-repeat url('/images/four-elems-1.jpg');
+    height: 90vh;
+    position: relative;
+}
+
+.sign-up-form {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    padding: 3.5rem;
+    height: 80vh;
+    width: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    background-color: var(--log-in-body);
+    border-radius: 5rem;
+
+}
+
+.sign-up-form h2 {
+    padding: 3rem 0;
+    font-size: 2.5rem;
+    letter-spacing: .3rem; 
+    background-color: rgba(0, 0, 0, .8);
+    color: var(--landing-text);
+}
+
+#form-emphasis {
+    font-size: 1.3rem;
+    letter-spacing: .1rem;
+    font-weight: 700;
+}
+
+.sign-up-form * {
+    margin-bottom: 1rem;
+}
+
+.signup-content, .signup-content * {
+    border: 1px solid red;
+}
+
+.signup-content {
+    margin-top: 1rem;
+}
+
+.team-choice li {
+    display: inline;
+}
+
 /***********************************/
 /***************FOOTER**************/
 /***********************************/
@@ -212,6 +292,10 @@ footer nav {
 footer nav li {
     display: inline;
     padding: .5rem 1.5rem;
+}
+
+footer nav li:hover {
+    color: #ff6f00;
 }
 
 footer span {

@@ -152,4 +152,14 @@ get '/settings' do
     erb :settings
 end
 
+# DELETING ACCOUNT
+
+get '/delete' do
+    erb :delete
+end
+
+post '/delete' do
+    redirect '/'
+end
+
 require './models'
