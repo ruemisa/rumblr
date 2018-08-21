@@ -104,7 +104,8 @@ post '/addpost' do
         post_title: params['title'],
         author: user['username'],
         post_category: params['category'],
-        post_content: params['content']
+        post_content: params['content'],
+        user_id: user['id']
     )
     post.save
     p post

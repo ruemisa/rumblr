@@ -7,7 +7,7 @@ class CreatePostsTable < ActiveRecord::Migration[5.2]
       t.string :author
       t.datetime :created_at
       t.datetime :updated_at
-      t.references :user, index: true
+      t.references :user, foreign_key: true
     end
   end
 end
