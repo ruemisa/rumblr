@@ -238,7 +238,7 @@ header nav li:hover {
     width: 50%;
     transform: translateX(-50%);
     text-align: center;
-    background-color: var(--log-in-body);
+    background-color: rgba(254, 254, 254, .6);
     border-radius: 5rem;
 
 }
@@ -261,16 +261,66 @@ header nav li:hover {
     margin-bottom: 1rem;
 }
 
-.signup-content, .signup-content * {
-    border: 1px solid red;
-}
-
 .signup-content {
     margin-top: 1rem;
+    padding: 1rem;
+}
+
+.signup-content * {
+    margin-bottom: 1rem;
+    font-family: 'Julee', cursive;
+
+}
+
+.form-input {
+    padding: .3rem 0;
+    width: 70%;
+    background-color: inherit;
+    border-style: none;
+    border-bottom: 2px solid rgba(0, 0, 0, .8);
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.form-input::placeholder {
+    color: inherit;
+    font-family: 'Julee', cursive;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.form-input:focus {
+    outline-style: none;
+}
+
+.team-choice p, .team-choice li {
+    font-size: 1.5rem
 }
 
 .team-choice li {
     display: inline;
+    padding: .5rem 1rem;
+}
+
+.signup-content button {
+    margin-top: 1rem;
+    padding: 1rem;
+    width: 25%;
+    font-weight: 700;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    background-color: rgba(27, 27, 17, .8);
+    color: var(--landing-text);
+    border-style: none;
+    border-radius: .5rem;
+}
+
+.signup-content button:hover {
+    cursor: pointer;
+    background-color: var(--landing-text);
+    color:  rgba(27, 27, 17, .8);
+    transition: .6s;
 }
 
 /***********************************/
