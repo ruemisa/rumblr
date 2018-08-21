@@ -1,3 +1,5 @@
+<a href="/profile"> Back to Profile </a>
+
 <nav>
     <ul>
         <li><a href="/local">Local</a></li>
@@ -13,6 +15,7 @@
         <% if post.post_category == 'global' %>
         <h3> <%= post.post_title %> </h3>
         <p> <%= post.author %> </p>
+        <p> <%=post.theme %> </p>        
         <p> <%= post.post_content %> </p>
         <% end %>
     <% end %>

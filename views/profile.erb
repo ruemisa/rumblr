@@ -6,9 +6,11 @@
         <li><a href="/global">Global</a></li>
     </ul>
 </nav>
+<a href="/addpost"> New Post </a>
+
 
 <% if session[:user] == nil %>
     <p> No one is logged in </p>
 <% elsif session[:user] != nil %>
-    <p> Welcome back, <%= session[:user].username %> </p>
+    <p> Welcome, <%= session[:user].username %> </p>
 <% end %>

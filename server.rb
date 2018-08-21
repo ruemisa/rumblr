@@ -8,8 +8,6 @@ set :database, "sqlite3:rumblr.sqlite3"
 
 # landing with sign-in form
 get '/' do
-    $users = User.all
-    $posts = Post.all
     $comments = Comment.all
     erb :home
 end
@@ -51,9 +49,14 @@ post '/signup' do
         password: params['password'],
         allegiance: params['allegiance']
     )
-    user.save
-    # p user
-    redirect '/'
+    user.save 
+    $users = User.all
+    if user.save 
+        session[:user] = user
+        redirect :profile
+    else
+        redirect '/'
+    end
 end
 
 ##### LOG OUT #####
@@ -83,12 +86,20 @@ end
 # Accessing local forum
 get '/local' do
     #do something conditional here to access the right local forum
-    erb :local
+    if $posts == nil
+        redirect :profile
+    else
+        erb :local
+    end
 end
 
 # Accessing global forum
 get '/global' do
-    erb :global
+    if $posts == nil
+        redirect :profile
+    else
+        erb :global
+    end
 end
 
 # Posting to forums
@@ -103,13 +114,22 @@ post '/addpost' do
     post = Post.new(
         post_title: params['title'],
         author: user['username'],
+        theme: user['allegiance'],
         post_category: params['category'],
         post_content: params['content'],
         user_id: user['id']
     )
     post.save
+    $posts = Post.all
     p post
-    redirect :profile
+    if post.post_category == 'local'
+        redirect :local
+    elsif post.post_category == 'global'
+        redirect :global
+    else 
+        p 'No Posts Available'
+        redirect :profile
+    end
 end
 
 # ADDING EDITING CAPABILITIES TO POSTING TO FORUMS
