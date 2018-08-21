@@ -27,7 +27,7 @@ post '/' do
         redirect :profile
     else
         p "Invalid Credentials"
-        redirect '/'
+        redirect :signup
     end
 end
 

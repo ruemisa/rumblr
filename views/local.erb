@@ -1,14 +1,18 @@
-<a href="/profile"> Back to Profile </a>
+<div class="">
 
-<nav>
-    <ul>
-        <li><a href="/local">Local</a></li>
-        <li><a href="/global">Global</a></li>
-    </ul>
-</nav>
+    <a href="/profile"> Back to Profile </a>
 
-<a href="/addpost"> New Post </a>
+    <nav>
+        <ul>
+            <li><a href="/local">Local</a></li>
+            <li><a href="/global">Global</a></li>
+        </ul>
+    </nav>
 
+</div>
+
+
+<p> <a href="/addpost"> New Post </a> </p>
 
 <% @current_user = session[:user] %>
 <% @allegiance = @current_user.allegiance %>
@@ -23,3 +27,4 @@
                 <p> No community posts. </p>
             <% end %>
         <% end %>
+

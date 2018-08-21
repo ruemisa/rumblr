@@ -1,0 +1,79 @@
+:root {
+    --col-4: repeat(4, 1fr);
+    --col-3: repeat(3, 1fr);
+    --col-2: repeat(2, 1fr);
+
+    --grid-block: 5rem;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100%;
+    width: 100%;
+    font-family: 'Eagle Lake', cursive;
+}
+
+a, li {
+    list-style: none;
+    text-decoration: none;
+    color: inherit;
+}
+
+p {
+    font-family: 'Julee', cursive;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: var(--col-4);
+    grid-auto-rows: minmax(6.25rem auto);
+    grid-template-areas: 
+    'header header header header'
+    'main main main main'
+    'footer footer footer footer';
+}
+
+/***********************************/
+/***************HEADER**************/
+/***********************************/
+
+header {
+    grid-area: header;
+    height: 20vh;
+    border: 1px solid red;
+}
+
+
+/***********************************/
+/**************MAIN*****************/
+/***********************************/
+
+.main-container {
+    grid-area: main;
+    padding-bottom: var(--grid-block);
+}
+
+/* HERO */
+
+.hero, .hero * {
+    border: 1px solid red;
+}
+
+.hero {
+    background: center / cover no-repeat url('/images/four-benders.jpg');
+    height: 90vh;
+}
+
+
+/***********************************/
+/***************FOOTER**************/
+/***********************************/
+
+footer {
+    grid-area: footer;
+}
