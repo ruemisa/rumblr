@@ -20,6 +20,7 @@ GEM
       concurrent-ruby (~> 1.0)
     minitest (5.11.3)
     mustermann (1.0.3)
+    pg (1.0.0)
     rack (2.0.5)
     rack-protection (2.0.3)
       rack
@@ -45,6 +46,7 @@ DEPENDENCIES
   activerecord
   bcrypt
   date
+  pg
   rake
   sinatra
   sinatra-activerecord
