@@ -21,7 +21,7 @@ post '/' do
     @email = params['email']
     @given_password = params['password']
     # do rest of login function here
-    @user = User.find_by(email: email)
+    @user = User.find_by(email: @email)
     if @user.password == @given_password
         session[:user] = @user
         redirect :profile
@@ -118,13 +118,14 @@ post '/addpost' do
         post_title: params['title'],
         author: @user['username'],
         theme: @user['allegiance'],
+        # image_url: params['image_url'],
         post_category: params['category'],
         post_content: params['content'],
         user_id: @user['id']
     )
     @post.save
     $posts = Post.all
-    p post
+    # p @post
     if @post.post_category == 'local'
         redirect :local
     elsif @post.post_category == 'global'
@@ -154,10 +155,27 @@ get '/settings' do
 end
 
 post '/settings' do
-    @current_user = User.find(session[:user])
-    @current_user.destroy
-    session.clear
+    current_user = session[:user].id
+    user = User.find_by(id: current_user)
+    user_post = Post.where(user_id: current_user)
+    user_post.each do |post|
+        p "Posts Deleted"
+        post.destroy
+    end
+    p "User Destroyed"
+    user.destroy
     redirect '/'
 end
 
 require './models'
+
+# get '/delete' do
+#     current = session[:user].id
+#     user = User.find_by(id: current)
+#     postD = Post.where(foriegn_id: current)
+#     postD.each do |post|
+#       post.destroy
+#     end
+#     user.destroy
+#     redirect '/'
+#   end
