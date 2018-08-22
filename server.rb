@@ -75,6 +75,23 @@ end
 
 # Profile Page
 get '/profile' do
+    
+    stylesheets = ['air.css', 'fire.css', 'water.css', 'earth.css']
+    $styling = ''
+    allegiance = session[:user].allegiance
+    
+    if allegiance == 'air'
+        $styling = stylesheets[0]
+    elsif allegiance == 'fire'
+        $styling = stylesheets[1]
+    elsif allegiance == 'water'
+        $styling = stylesheet[2]
+    elsif allegiance == 'fire'
+        $styling = stylsheet[3]
+    else
+        p 'YOU ARE THE AVATAR'
+    end
+    p $styling 
     erb :profile
 end
 
