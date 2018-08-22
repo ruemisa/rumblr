@@ -1,0 +1,82 @@
+.profile-grid {
+    display: grid;
+    grid-template-columns: var(--col-3);
+    grid-auto-rows: var(--row-size);
+    grid-template-areas:
+    'header header header'
+    'body body body';
+    padding: 3rem 2rem;
+    background-color: rgba(255, 178, 78, 1);
+    height: 100%;
+}
+
+/* PROFILE HEADER */
+
+.profile-head {
+    grid-area: header;
+    position: relative;
+    margin-bottom: 2rem;
+    padding: 4rem 0;
+    color: rgba(204, 87, 0, 1);
+    text-transform: capitalize;
+}
+
+.profile-head h1 {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    font-size: 3rem;
+}
+
+.profile-head nav {
+    position: absolute;
+    top: 2.5rem;
+    right: 5rem;
+    font-size: 1.2rem;
+}
+
+.profile-head nav li {
+    display: inline;
+    padding: .5rem 1.5rem;
+}
+
+.profile-head nav li:hover {
+    font-weight: 700;
+    color: rgba(255, 229, 178, 1);
+    text-decoration: underline;
+}
+
+/* PROFILE CONTENT */
+
+.profile-body, .profile-body * {
+    border: 1px solid red;
+}
+
+.profile-body {
+    grid-area: body;
+    display: grid;
+    grid-template-columns: var(--col-3);
+    grid-auto-rows: var(--row-size);
+    grid-template-areas:
+    'pic post post'
+    'bio post post';
+}
+
+.profile-pic {
+    grid-area: pic;
+}
+
+.profile-pic img {
+    height: auto;
+    width: 50%;
+}
+
+.bio-details {
+    grid-area: bio;
+}
+
+.latest-post {
+    grid-area: post;
+    /* background-color: #fff; */
+}
+

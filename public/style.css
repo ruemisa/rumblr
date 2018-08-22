@@ -4,6 +4,8 @@
     --col-3: repeat(3, 1fr);
     --col-2: repeat(2, 1fr);
 
+    --row-size: minmax(6.25rem, auto);
+
     --grid-block: 5rem;
 
     /* Colors */
@@ -41,7 +43,7 @@ p {
 .wrapper {
     display: grid;
     grid-template-columns: var(--col-4);
-    grid-auto-rows: minmax(6.25rem auto);
+    grid-auto-rows: var(--row-size);
     grid-template-areas: 
     'header header header header'
     'main main main main'
@@ -63,6 +65,10 @@ p {
 .link-text {
     color: #ff6f00;
     font-weight: 700;
+}
+
+.link-text:hover {
+    color: var(--landing-text);
 }
 
 /***********************************/
@@ -323,6 +329,9 @@ header nav li:hover {
     font-size: 1.5rem;
     font-weight: 700;
 }
+
+
+/* PROFILE PAGE BASE */
 
 /***********************************/
 /***************FOOTER**************/

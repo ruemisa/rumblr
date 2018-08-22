@@ -88,6 +88,7 @@ end
 
 # Accessing local forum
 get '/local' do
+    $posts = Post.all
     #do something conditional here to access the right local forum
     if $posts == nil
         redirect :profile
@@ -98,6 +99,8 @@ end
 
 # Accessing global forum
 get '/global' do
+    $posts = Post.all
+
     if $posts == nil
         redirect :profile
     else
@@ -164,18 +167,9 @@ post '/settings' do
     end
     p "User Destroyed"
     user.destroy
+    session.clear
     redirect '/'
 end
 
 require './models'
 
-# get '/delete' do
-#     current = session[:user].id
-#     user = User.find_by(id: current)
-#     postD = Post.where(foriegn_id: current)
-#     postD.each do |post|
-#       post.destroy
-#     end
-#     user.destroy
-#     redirect '/'
-#   end

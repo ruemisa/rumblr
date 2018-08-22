@@ -7,6 +7,7 @@
     <title>Avatar</title>
     <link href="https://fonts.googleapis.com/css?family=Eagle+Lake|Julee" rel="stylesheet">
     <link rel="stylesheet" href="/style.css" type="text/css">
+    <link rel="stylesheet" href="/air.css" type="text/css">
 </head>
 <body>
 
@@ -22,7 +23,7 @@
                     <li><a href="/">Sign In</a></li>
                     <li><a href="/signup">Sign Up</a></li>
                 <% elsif session[:user] != nil %>
-                    <li><a href="/profile"><%= session[:user].username %></li>
+                    <li><a href="/profile" class="link-text"><%= session[:user].username %></li>
                     <li><a href="/logout">Sign Out</a></li>
                     <li><a href="/settings">Settings</a></li>
                 <% end %>
