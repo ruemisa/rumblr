@@ -178,7 +178,85 @@
     font-size: 1.2rem;
 }
 
+/* ADD POST STYLING */
+
+.add-post-grid {
+    background: center / cover no-repeat url('/images/world-map.jpg');
+    height: 120vh;
+    position: relative;
+}
+
+.new-post {
+    background-color: rgba(255, 153, 78, .7);
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 3.5rem;
+    height: auto;
+    width: 30%;
+    text-align: center;
+    border-top-left-radius: 4rem;
+    border-top-right-radius: 4rem;
+
+}
+
+.new-post * {
+    display: block;
+    margin-bottom: 1rem;
+    border: 1px solid red;
+    font-family: 'Julee', cursive;    
+    border-style: none;
+}
+
+#label-title {
+    padding: .5rem 0;
+    font-size: 2rem;
+    letter-spacing: .3rem; 
+    background-color: rgba(0, 0, 0, .8);
+    color: var(--landing-text);
+}
+
+.new-post input[type="radio"] {
+    display: inline;
+    margin: 0 .5rem;
+}
+
+#label-content {
+    font-size: 1.3rem;
+    letter-spacing: .3rem; 
+    padding-top: 1rem;
+    text-decoration: underline;
+}
 
 
+.new-post input[type="text"], .new-post input[type="url"] {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.3rem;
+}
 
+.new-post textarea {
+    width: 100%;
+    font-size: 1.3rem;
+    padding: 1rem;
+}
+
+.new-post button {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5rem;
+    padding: .5rem 1rem;
+    border-radius: .5rem;
+    text-transform: uppercase;
+    background-color: rgba(27, 27, 17, .8);
+    color: var(--landing-text);
+}
+
+.new-post button:hover {
+    background-color: var(--landing-text);
+    color:  rgba(27, 27, 17, .8);
+    transition: .6s;
+}
 

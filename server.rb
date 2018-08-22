@@ -121,7 +121,7 @@ post '/addpost' do
         post_title: params['title'],
         author: @user['username'],
         theme: @user['allegiance'],
-        # image_url: params['image_url'],
+        image_url: params['image_url'],
         post_category: params['category'],
         post_content: params['content'],
         user_id: @user['id']
