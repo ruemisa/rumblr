@@ -15,7 +15,7 @@
 .profile-head {
     grid-area: header;
     position: relative;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     padding: 4rem 0;
     color: rgba(204, 87, 0, 1);
     text-transform: capitalize;
@@ -54,12 +54,11 @@
     grid-template-columns: var(--col-3);
     grid-auto-rows: var(--row-size);
     grid-template-areas:
-    'pic post post'
-    'bio post post';
+    'profile post post';
 }
 
 .profile-pic {
-    grid-area: pic;
+    grid-area: profile;
 }
 
 .profile-pic img {
@@ -107,7 +106,6 @@
 }
 
 .bio-details {
-    grid-area: bio;
     margin-left: 3rem;
     letter-spacing: .2rem;
     color: rgba(109, 80, 43, 1);    
@@ -122,13 +120,65 @@
     font-size: 1.1rem;
 }
 
-.latest-post, .latest-post * {
+/* Latest Posts */
+
+/* .latest-post, .latest-post * {
     border: 1px solid red;
-}
+} */
 
 .latest-post {
     grid-area: post;
     display: grid;
     grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+    border-top-left-radius: 4rem;
+    border-top-right-radius: 4rem;
+    background-color: rgba(255, 153, 78, 1);
 }
+
+.latest-post h2 {
+    font-size: 2.2rem;
+    background-color: rgba(255, 229, 178, .8);
+    color: rgba(204, 87, 0, 1);
+    margin-bottom: 1.2rem;
+    border-top-left-radius: 5rem;
+    border-top-right-radius: 5rem;
+    text-align: center;
+}
+
+.latest-content {
+    margin-bottom: 2rem;
+    padding: 1rem;
+}
+
+.latest-content h3 {
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+}   
+
+.latest-content img {
+    width: 50%;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+#profile-author {
+    margin-bottom: .5rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+#create-date {
+    margin-bottom: .2rem;
+    font-size: .8rem;
+    font-style: italic;
+}
+
+#post-body {
+    font-size: 1.2rem;
+}
+
+
+
+
 

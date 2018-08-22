@@ -23,24 +23,27 @@
                 <input type="url" name="profile_image" placeholder="Upload Profile Pic">
                 <button type="submit">Upload</button>
             </form>
-        </div>
-
-        <div class="bio-details">
+            <div class="bio-details">
             <h3> <%= session[:user].first_name %> <%=session[:user].last_name %> </h3>
             <% birthday = session[:user].birthday %>
             <p> Birthday: <%= Date.parse(birthday.to_s) %> </p>
         </div>
+        </div>
+
 
         <div class="latest-post">
             <h2> Latest Posts </h2>
-        <% posts = session[:user].posts %>
-        <% posts.first(3).each do |post| %>
-            <h3> <%= post.post_title %> </h3>
-            <p> <%= post.author %> </p>
-            <p> <%= post.created_at %> </p>
-            <p> <%= post.post_category %> </p>
-            <p> <%= post.post_content %> </p>
-        <% end %>
+
+            <% posts = session[:user].posts %>
+            <% posts.first(3).each do |post| %>
+            <div class="latest-content">
+                <h3> <%= post.post_title %> </h3>
+                <p id="profile-author"> by <%= post.author %> </p>
+                <img src="" alt="post photo">
+                <p id="create-date"> <%= post.created_at %> </p>
+                <p id="post-body"> <%= post.post_content %> </p>
+            </div>
+            <% end %>
         </div>
     </section>
     <% end %>
