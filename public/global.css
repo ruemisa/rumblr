@@ -1,13 +1,82 @@
 .global-community {
-    background: url('/images/global-2.jpg') no-repeat;
-    background-size: cover;
-    height: auto;
+    background-color: rgba(135, 135, 0, 1);
+    min-height: 100%;
     display: grid;
     grid-template-columns: var(--col-4);
     grid-auto-rows: var(--row-size);
+    grid-template-areas:
+    'head head head head'
+    '. title title .'
+    'body body body body';
+    padding-bottom: var(--grid-block);
 }
 
-.global-posts img {
+.global-head {
+    grid-area: head;
+    background-color: rgba(0, 0, 0, .75);
+    color: var(--landing-text);
+    text-align: center;
+}
+
+.global-head nav {
+    margin-top: 2rem;
+}
+
+.global-head nav li {
+    display: inline;
+    text-transform: capitalize;
+    padding: .5rem 1.5rem;
+}
+
+.global-head nav li:hover {
+    color: rgba(255, 111, 0, 1);
+}
+
+.global-title {
+    grid-area: title;
+    text-align: center;
+    align-self: center;
+    margin: 1.5rem 0;
+    background-color: rgba(25, 25, 24, .7);
+    color: var(--landing-text);
+}
+
+
+.global-posts {
+    grid-area: body;
+    display: grid;
+    grid-template-columns: var(--col-3);
+    grid-auto-rows: var(--row-size);
+    grid-row-gap: 1rem;
+    justify-self: center;
+    margin-bottom: var(--grid-block);
+}
+
+.global-block {
+    background-color: rgba(254, 254, 254, .7);
+    margin: 1rem .5rem;
+    padding: 1.5rem;
+}
+
+.global-block h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.global-block p {
+    font-size: 1.1rem;
+}
+
+.global-block img {
     height: 50%;
     width: 50%;
+    margin-bottom: .5rem;
+}
+
+#global-created {
+    margin-bottom: 1rem;
+}
+
+#global-content {
+    margin-bottom: 2rem;
 }

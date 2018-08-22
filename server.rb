@@ -126,16 +126,20 @@ post '/addpost' do
         post_content: params['content'],
         user_id: @user['id']
     )
-    @post.save
-    $posts = Post.all
     # p @post
-    if @post.post_category == 'local'
-        redirect :local
-    elsif @post.post_category == 'global'
-        redirect :global
+    if @post.post_category != nil
+        @post.save
+        $posts = Post.all
+        if @post.post_category == 'local'
+            redirect :local
+        elsif @post.post_category == 'global'
+            redirect :global
+        else 
+            p 'No Posts Available'
+            redirect :profile
+        end
     else 
-        p 'No Posts Available'
-        redirect :profile
+        p 'CANT POST'
     end
 end
 

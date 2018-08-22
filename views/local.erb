@@ -1,28 +1,31 @@
-<div class="">
+<div class="local-community">
+    <% @allegiance = session[:user].allegiance %>
+    <div class="local-head">
+        <nav>
+            <ul>
+                <li><a href="/profile"> Back to Profile </a></li>
+                <li><a href="/addpost"> New Post </a></li>
+                <li><a href="/global">Global Community</a></li>
+            </ul>
+        </nav>
+    </div>
 
-    <a href="/profile"> Back to Profile </a>
-
-    <nav>
-        <ul>
-            <li><a href="/local">Local</a></li>
-            <li><a href="/global">Global</a></li>
-        </ul>
-    </nav>
-
-</div>
+    <h2 class="local-title"> Welcome to the community, <span> <%=@allegiance.capitalize %> </span> bender!</h2>
 
 
-<p> <a href="/addpost"> New Post </a> </p>
-
-<% @current_user = session[:user] %>
-<% @allegiance = @current_user.allegiance %>
-<h1> <%= @allegiance %> POSTS </h1>    
-        <% $posts.each do |post| %>
-            <% if post.post_category == 'local' && post.theme == @allegiance %>
+    <section class="local-posts">
+        <% $posts.reverse.each do |post| %>
+        <% if post.post_category == 'local' && post.theme == @allegiance %>
+        <div class="local-block">
             <h3> <%= post.post_title %> </h3>
             <p> <%= post.author %> </p>
-            <p> <%=post.theme %> </p>
-            <p> <%= post.post_content %> </p>
+            <p id="local-created"> <%= post.created_at %> </p>
+            <img src="<%= post.image_url %>" >
+            <p id="local-content">  <%= post.post_content %> </p>
+        </div>            
             <% end %>
         <% end %>
 
+    </section>
+
+</div>

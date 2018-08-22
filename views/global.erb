@@ -10,20 +10,21 @@
         </nav>
     </div>
 
+    <h2 class="global-title"> Welcome to the Global Community! </h2>
+
+
     <section class="global-posts">
 
-        <h1> Welcome to the Global Community! </h1>
-        <% $posts.each do |post| %>
-            <div class="global-block">
-            <% if post.post_category == 'global' %>
-                <h3> <%= post.post_title %> </h3>
-                <p> <%= post.author %> </p>
-                <p> <%= post.created_at %> </p>
-                <img src="<%= post.image_url %>" >
-                <p> <%=post.theme %> </p>        
-                <p> <%= post.post_content %> </p>
+        <% $posts.reverse.each do |post| %>
+        <% if post.post_category == 'global' %>
+        <div class="global-block">
+            <h3> <%= post.post_title %> </h3>
+            <p> <%= post.author %> </p>
+            <p id="global-created"> <%= post.created_at %> </p>
+            <img src="<%= post.image_url %>" >
+            <p id="global-content">  <%= post.post_content %> </p>
+        </div>            
             <% end %>
-            </div>
         <% end %>
 
     </section>
