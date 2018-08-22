@@ -28,7 +28,7 @@
         <div class="bio-details">
             <h3> <%= session[:user].first_name %> <%=session[:user].last_name %> </h3>
             <% birthday = session[:user].birthday %>
-            <p> <%= Date.parse(birthday.to_s) %> </p>
+            <p> Birthday: <%= Date.parse(birthday.to_s) %> </p>
         </div>
 
         <div class="latest-post">

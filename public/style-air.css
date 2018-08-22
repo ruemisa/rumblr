@@ -48,10 +48,6 @@
 
 /* PROFILE CONTENT */
 
-.profile-body, .profile-body * {
-    border: 1px solid red;
-}
-
 .profile-body {
     grid-area: body;
     display: grid;
@@ -69,14 +65,70 @@
 .profile-pic img {
     height: auto;
     width: 50%;
+    margin-left: 2rem;
+}
+
+.profile-pic form {
+    margin-left: 2rem;
+    padding: 1rem;
+}
+
+.profile-pic form * {
+    font-family: 'Julee', cursive;
+}
+
+.profile-pic form input {
+    padding: .5rem 2rem;
+}
+
+.profile-pic form input:focus {
+    outline-style: none;
+}
+
+.profile-pic form input::placeholder {
+    font-family: 'Julee', cursive;
+    font-size: 1.2rem;
+}
+
+.profile-pic form button {
+    width: 5rem;
+    padding: .5rem;
+    background-color: rgba(204, 115, 0, 1);
+    color: rgba(255, 222, 178, 1);
+    font-size: 1rem;
+    font-family: 'Julee', cursive;
+    border-style: none;
+}
+
+.profile-pic form button:hover {
+    background-color: rgba(255, 222, 178, 1);
+    color: rgba(204, 115, 0, 1);
+    font-weight: 700;
 }
 
 .bio-details {
     grid-area: bio;
+    margin-left: 3rem;
+    letter-spacing: .2rem;
+    color: rgba(109, 80, 43, 1);    
+}
+
+.bio-details h3 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.bio-details p {
+    font-size: 1.1rem;
+}
+
+.latest-post, .latest-post * {
+    border: 1px solid red;
 }
 
 .latest-post {
     grid-area: post;
-    /* background-color: #fff; */
+    display: grid;
+    grid-template-columns: 1fr;
 }
 
