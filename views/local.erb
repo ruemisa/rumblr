@@ -14,7 +14,7 @@
 
 
     <section class="local-posts">
-        <% $posts.reverse.each do |post| %>
+        <% $posts.reverse.first(20).each do |post| %>
         <% if post.post_category == 'local' && post.theme == @allegiance %>
         <div class="local-block">
             <h3> <%= post.post_title %> </h3>

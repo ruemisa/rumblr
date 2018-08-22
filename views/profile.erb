@@ -20,8 +20,8 @@
         <div class="profile-pic">
             <img src="/images/profile.jpg" alt="profile pic">
             <form method="POST" action="/profile">
-                <input type="url" name="profile_image" placeholder="Upload Profile Pic">
-                <button type="submit">Upload</button>
+                <input type="url" name="profile_image" placeholder="DOES NOT WORK YET">
+                <button type="submit" disabled>Upload</button>
             </form>
             <div class="bio-details">
             <h3> <%= session[:user].first_name %> <%=session[:user].last_name %> </h3>
@@ -35,7 +35,7 @@
             <h2> Latest Posts </h2>
 
             <% user_posts = session[:user].posts %>
-            <% user_posts.reverse.each do |post| %>
+            <% user_posts.reverse.first(3).each do |post| %>
             <div class="latest-content">
                 <h3> <%= post.post_title %> </h3>
                 <p id="profile-author"> by <%= post.author %> </p>

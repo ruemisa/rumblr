@@ -264,7 +264,7 @@
 /* LOCAL COMMUNITY */
 
 .local-community {
-    background: center / cover no-repeat url('/images/air-1.jpg');
+    background: center / cover no-repeat url('/images/earth-1.jpg');
     min-height: 100%;
     display: grid;
     grid-template-columns: var(--col-4);

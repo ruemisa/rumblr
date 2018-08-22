@@ -85,9 +85,9 @@ get '/profile' do
     elsif allegiance == 'fire'
         $styling = stylesheets[1]
     elsif allegiance == 'water'
-        $styling = stylesheet[2]
+        $styling = stylesheets[2]
     elsif allegiance == 'fire'
-        $styling = stylsheet[3]
+        $styling = stylsheets[3]
     else
         p 'YOU ARE THE AVATAR'
     end
