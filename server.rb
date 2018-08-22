@@ -74,7 +74,7 @@ end
 ##### PROFILE #####
 
 # Profile Page
-get '/profile' do 
+get '/profile' do
     erb :profile
 end
 
