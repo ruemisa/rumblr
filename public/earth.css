@@ -6,7 +6,7 @@
     'header header header'
     'body body body';
     padding: 3rem 2rem;
-    background-color: rgba(255, 178, 78, 1);
+    background-color: rgba(0, 105, 13, 1);
     height: 100%;
 }
 
@@ -17,7 +17,7 @@
     position: relative;
     margin-bottom: 1rem;
     padding: 4rem 0;
-    color: rgba(204, 87, 0, 1);
+    color: rgba(198, 252, 101, 1);
     text-transform: capitalize;
 }
 
@@ -42,7 +42,7 @@
 
 .profile-head nav li:hover {
     font-weight: 700;
-    color: rgba(255, 229, 178, 1);
+    color: rgba(45, 71, 0, 1);
     text-decoration: underline;
 }
 
@@ -92,23 +92,23 @@
 .profile-pic form button {
     width: 5rem;
     padding: .5rem;
-    background-color: rgba(204, 115, 0, 1);
-    color: rgba(255, 222, 178, 1);
+    background-color: rgba(251, 255, 102, 1);
+    color: rgba(27, 27, 17, 1);
     font-size: 1rem;
     font-family: 'Julee', cursive;
     border-style: none;
 }
 
 .profile-pic form button:hover {
-    background-color: rgba(255, 222, 178, 1);
-    color: rgba(204, 115, 0, 1);
+    background-color: rgba(27, 27, 17, 1);
+    color: rgba(251, 255, 102, 1);
     font-weight: 700;
 }
 
 .bio-details {
     margin-left: 3rem;
     letter-spacing: .2rem;
-    color: rgba(109, 80, 43, 1);    
+    color: rgba(98, 244, 116, 1);    
 }
 
 .bio-details h3 {
@@ -133,13 +133,13 @@
     grid-auto-rows: auto;
     border-top-left-radius: 4rem;
     border-top-right-radius: 4rem;
-    background-color: rgba(255, 153, 78, 1);
+    background-color: rgba(198, 252, 101, 1);
 }
 
 .latest-post h2 {
     font-size: 2.2rem;
-    background-color: rgba(255, 229, 178, .8);
-    color: rgba(204, 87, 0, 1);
+    background-color: rgba(131, 135, 0, .5);
+    color: rgba(0, 59, 7, 1);
     margin-bottom: 1.2rem;
     border-top-left-radius: 5rem;
     border-top-right-radius: 5rem;
@@ -278,8 +278,8 @@
 
 .local-head {
     grid-area: head;
-    background-color: rgba(204, 115, 0, .7);
-    color: rgba(255, 222, 178, 1);
+    background-color: rgba(0, 105, 13, .7);
+    color: rgba(251, 255, 102, 1);
     text-align: center;
 }
 
@@ -294,7 +294,7 @@
 }
 
 .local-head nav li:hover {
-    color: rgba(255, 196, 78, 1);
+    color: rgba(0, 59, 7, 1);
 }
 
 .local-title {
@@ -302,8 +302,8 @@
     text-align: center;
     align-self: center;
     margin: 1.5rem 0;
-    background-color: rgba(255, 170, 0, .5);
-    color: rgba(255, 229, 178, 1);
+    background-color: rgba(0, 59, 7, .6);
+    color: rgba(198, 252, 101, 1);
 }
 
 
@@ -318,8 +318,8 @@
 }
 
 .local-block {
-    background-color: rgba(255, 153, 78, .7);
-    color: rgba(255, 222, 178, 1);
+    background-color: rgba(45, 71, 0, .65);
+    color: rgba(251, 255, 102, 1);
     margin: 1rem .5rem;
     padding: 1.5rem;
 }
