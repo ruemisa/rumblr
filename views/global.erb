@@ -1,21 +1,31 @@
-<a href="/profile"> Back to Profile </a>
+<div class="global-community">
+    <% @allegiance = session[:user].allegiance %>
+    <div class="global-head">
+        <nav>
+            <ul>
+                <li><a href="/profile"> Back to Profile </a></li>
+                <li><a href="/addpost"> New Post </a></li>
+                <li><a href="/local"><%= @allegiance %> Community</a></li>
+            </ul>
+        </nav>
+    </div>
 
-<nav>
-    <ul>
-        <li><a href="/local">Local</a></li>
-        <li><a href="/global">Global</a></li>
-    </ul>
-</nav>
+    <section class="global-posts">
 
-<a href="/addpost"> New Post </a>
-
-
-<h1> POSTS </h1>
-    <% $posts.each do |post| %>
-        <% if post.post_category == 'global' %>
-        <h3> <%= post.post_title %> </h3>
-        <p> <%= post.author %> </p>
-        <p> <%=post.theme %> </p>        
-        <p> <%= post.post_content %> </p>
+        <h1> Welcome to the Global Community! </h1>
+        <% $posts.each do |post| %>
+            <div class="global-block">
+            <% if post.post_category == 'global' %>
+                <h3> <%= post.post_title %> </h3>
+                <p> <%= post.author %> </p>
+                <p> <%= post.created_at %> </p>
+                <img src="<%= post.image_url %>" >
+                <p> <%=post.theme %> </p>        
+                <p> <%= post.post_content %> </p>
+            <% end %>
+            </div>
         <% end %>
-    <% end %>
+
+    </section>
+
+</div>

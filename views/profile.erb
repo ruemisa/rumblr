@@ -34,12 +34,12 @@
         <div class="latest-post">
             <h2> Latest Posts </h2>
 
-            <% posts = session[:user].posts %>
-            <% posts.first(3).each do |post| %>
+            <% user_posts = session[:user].posts %>
+            <% user_posts.each do |post| %>
             <div class="latest-content">
                 <h3> <%= post.post_title %> </h3>
                 <p id="profile-author"> by <%= post.author %> </p>
-                <img src="" alt="post photo">
+                <img src="<%= post.image_url %>" alt="post photo">
                 <p id="create-date"> <%= post.created_at %> </p>
                 <p id="post-body"> <%= post.post_content %> </p>
             </div>

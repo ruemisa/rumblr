@@ -1,0 +1,13 @@
+.global-community {
+    background: url('/images/global-2.jpg') no-repeat;
+    background-size: cover;
+    height: auto;
+    display: grid;
+    grid-template-columns: var(--col-4);
+    grid-auto-rows: var(--row-size);
+}
+
+.global-posts img {
+    height: 50%;
+    width: 50%;
+}

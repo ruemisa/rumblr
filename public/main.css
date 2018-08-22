@@ -147,7 +147,7 @@ header nav li:hover {
     top: 10rem;
     right: 10rem;
     width: 25vw;
-    height: 52vh;
+    height: 60vh;
     background-color: var(--log-in-body);
     border-top-left-radius: 5rem;
 }
@@ -229,7 +229,7 @@ header nav li:hover {
 
 .sign-up-page {
     background: center / cover no-repeat url('/images/four-elems-1.jpg');
-    height: 90vh;
+    height: 100vh;
     position: relative;
 }
 
@@ -238,7 +238,7 @@ header nav li:hover {
     top: 5%;
     left: 50%;
     padding: 3.5rem;
-    height: 80vh;
+    height: auto;
     width: 50%;
     transform: translateX(-50%);
     text-align: center;
