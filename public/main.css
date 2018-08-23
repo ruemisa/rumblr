@@ -487,3 +487,9 @@ footer span {
 /***********************************/
 /************EDIT PROFILE***********/
 /***********************************/
+
+.edit-page {
+    background: center / cover no-repeat url('/images/global-2.jpg');
+    height: 100vh;
+    position: relative;
+}

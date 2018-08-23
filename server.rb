@@ -22,7 +22,8 @@ post '/' do
     @given_password = params['password']
     # do rest of login function here
     @user = User.find_by(email: @email)
-    if @user.password == @given_password
+    
+    if @user.password == @given_password 
         session[:user] = @user
         redirect :profile
     else
@@ -184,7 +185,20 @@ get '/edit_profile' do
 end
 
 post '/edit_profile' do
-    redirect '/profile'
+    @current_user = session[:user]
+
+    @current_user.first_name = params['first_name']
+    @current_user.last_name = params['last_name']
+    @current_user.allegiance = params['allegiance']
+    @current_user.save
+    $users = User.all
+
+    if @current_user.save
+        session[:user] = @current_user
+        redirect '/profile'
+    else 
+        redirect :error
+    end
 end
 
 
