@@ -402,18 +402,28 @@ footer span {
 }
 
 .edit-block {
-    border: 1px solid red;
     align-self: end;
     margin-bottom: 2rem;
     padding: 3rem .5rem;
     width: 50%;
+    background-color: rgba(0, 80, 13, .6)
+}
+
+.settings-page h3 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    letter-spacing: .2rem;
+}
+
+.settings-page p {
+    font-size: 1.5rem;
 }
 
 .delete-block {
-    border: 1px solid red;
     align-self: baseline;
     padding: 3rem .5rem;
     width: 50%;
+    background-color: rgba(161, 0, 0, .6);
 }
 
 
@@ -450,14 +460,14 @@ footer span {
     color: rgba(255,  0,  0,1);
 }
 
-.delete form {
+.delete-page form {
     position: absolute;
-    top: 15rem;
+    top: 20rem;
     left: 50%;
     transform: translateX(-50%);
 }
 
-.delete form button {
+.delete-page form button {
     font-size: 1.5rem;
     padding: 1rem;
     border-style: none;
@@ -467,7 +477,7 @@ footer span {
     border-radius: 1rem;
 }
 
-.delete form button:hover {
+.delete-page form button:hover {
     background-color: rgba(221, 213, 207, 1);
     color: rgba(161, 0, 0, 1);
     font-weight: 700;

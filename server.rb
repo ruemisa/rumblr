@@ -77,7 +77,7 @@ end
 
 # Profile Page
 get '/profile' do
-    
+    $users = User.all
     $styling = ''
     allegiance = session[:user].allegiance
     
@@ -177,31 +177,22 @@ post '/delete' do
     redirect '/'
 end
 
+# EDITING ACCOUNT
+
+get '/edit_profile' do
+    erb :edit_profile
+end
+
+post '/edit_profile' do
+    redirect '/profile'
+end
+
 
 # ERRORS 
 
 get '/error' do
     erb :error
 end
-
-# SEARCH USERS
-
-get '/profile/user' do
-    erb :profile
-end
-
-post '/profile/user' do
-
-    user = User.where(params['username'].downcase)
-
-
-    redirect '/profile/user'
-end
-
-
-
-
-
 
 require './models'
 

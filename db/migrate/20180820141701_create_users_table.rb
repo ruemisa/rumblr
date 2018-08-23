@@ -8,6 +8,7 @@ class CreateUsersTable < ActiveRecord::Migration[5.2]
       t.datetime :birthday
       t.string :password_hash
       t.string :allegiance
+      t.string :image_url
       t.datetime :created_at
       t.datetime :updated_at
     end
