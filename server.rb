@@ -151,13 +151,19 @@ post '/addpost' do
     end
 end
 
-# DELETING ACCOUNT
+# SETTINGS ROUTE
 
 get '/settings' do
     erb :settings
 end
 
-post '/settings' do
+# DELETING ACCOUNT
+
+get '/delete' do
+    erb :delete
+end
+
+post '/delete' do
     current_user = session[:user].id
     user = User.find_by(id: current_user)
     user_post = Post.where(user_id: current_user)
@@ -171,21 +177,31 @@ post '/settings' do
     redirect '/'
 end
 
-# ACTUAL DELETE PAGE 
-
-get '/delete' do
-    erb :delete
-end
-
-post '/delete' do
-    redirect '/'
-end
 
 # ERRORS 
 
 get '/error' do
     erb :error
 end
+
+# SEARCH USERS
+
+get '/profile/user' do
+    erb :profile
+end
+
+post '/profile/user' do
+
+    user = User.where(params['username'].downcase)
+
+
+    redirect '/profile/user'
+end
+
+
+
+
+
 
 require './models'
 

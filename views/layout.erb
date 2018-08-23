@@ -27,10 +27,14 @@
                     <li><a href="/profile" class="link-text"><%= session[:user].username %></li>
                     <li><a href="/logout">Sign Out</a></li>
                     <li><a href="/settings">Settings</a></li>
-                <% end %>
                 </ul>
             </nav>
 
+            <form method="POST" action="/profile/user">
+                <input name="username" type="text" placeholder="Find Users">
+                <button type="submit"> Search </button>
+            </form>
+                <% end %>
         </header>
 
         <div class="main-container">

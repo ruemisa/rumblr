@@ -388,3 +388,92 @@ footer span {
 .error-page p {
     font-size: 1.3rem;
 }
+
+/***********************************/
+/*************SETTINGS**************/
+/***********************************/
+
+.settings-page {
+    background: center / cover no-repeat url('/images/four-elems.jpg');
+    height: 100vh;
+    display: grid;
+    color: var(--landing-text);
+    justify-items: center;
+}
+
+.edit-block {
+    border: 1px solid red;
+    align-self: end;
+    margin-bottom: 2rem;
+    padding: 3rem .5rem;
+    width: 50%;
+}
+
+.delete-block {
+    border: 1px solid red;
+    align-self: baseline;
+    padding: 3rem .5rem;
+    width: 50%;
+}
+
+
+/***********************************/
+/**************DELETE***************/
+/***********************************/
+
+.delete-page {
+    background: center / cover no-repeat url('/images/avatar-state.jpg');
+    height: 100vh;
+    position: relative;
+}
+
+.delete-text {
+    position: absolute;
+    top: 10rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 153, 78, .3);
+    padding: 1rem;
+    width: 30%;
+    height: 30%;
+    text-align: center;
+}
+
+.delete-text h2 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    color: rgba(255, 229, 178, 1);
+}
+
+.delete-text p {
+    font-size: 1.5rem;
+    color: rgba(255,  0,  0,1);
+}
+
+.delete form {
+    position: absolute;
+    top: 15rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.delete form button {
+    font-size: 1.5rem;
+    padding: 1rem;
+    border-style: none;
+    font-family: 'Eagle Lake', cursive;
+    background-color: rgba(161, 0, 0, 1);
+    color: rgba(221, 213, 207, 1);
+    border-radius: 1rem;
+}
+
+.delete form button:hover {
+    background-color: rgba(221, 213, 207, 1);
+    color: rgba(161, 0, 0, 1);
+    font-weight: 700;
+    transition: .6s;
+}
+
+/***********************************/
+/************EDIT PROFILE***********/
+/***********************************/
