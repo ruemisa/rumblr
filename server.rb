@@ -10,7 +10,7 @@ set :database, "sqlite3:rumblr.sqlite3"
 
 # landing with sign-in form
 get '/' do
-    $comments = Comment.all
+    # $comments = Comment.all
     erb :home
 end
 
@@ -27,13 +27,13 @@ post '/' do
         redirect :profile
     else
         p "Invalid Credentials"
-        redirect '/'
+        redirect :error
     end
 end
 
 ##### SIGN UP #####
 
-# sign up page just in case didn't use sign up form
+# sign up page 
 get '/signup' do
     erb :signup
 end
@@ -50,9 +50,11 @@ post '/signup' do
         birthday: Date.parse(params['birthday']),
         password: params['password'],
         allegiance: params['allegiance']
-    )
+    )   
+    
     @user.save 
     $users = User.all
+
     if @user.save 
         session[:user] = @user
         redirect :profile
@@ -76,29 +78,22 @@ end
 # Profile Page
 get '/profile' do
     
-    stylesheets = ['air.css', 'fire.css', 'water.css', 'earth.css']
     $styling = ''
     allegiance = session[:user].allegiance
     
     if allegiance == 'air'
-        $styling = stylesheets[0]
+        $styling = 'air.css'
     elsif allegiance == 'fire'
-        $styling = stylesheets[1]
+        $styling = 'fire.css'
     elsif allegiance == 'water'
-        $styling = stylesheets[2]
+        $styling = 'water.css'
     elsif allegiance == 'earth'
-        $styling = stylesheets[3]
+        $styling = 'earth.css'
     else
         p 'YOU ARE THE AVATAR'
     end
     p $styling 
     erb :profile
-end
-
-# Profile Update
-patch '/profile' do
-    # do some profile function here
-    redirect :profile
 end
 
 ##### POST #####
@@ -143,33 +138,17 @@ post '/addpost' do
         post_content: params['content'],
         user_id: @user['id']
     )
-    # p @post
-    if @post.post_category != nil
-        @post.save
-        $posts = Post.all
-        if @post.post_category == 'local'
-            redirect :local
-        elsif @post.post_category == 'global'
-            redirect :global
-        else 
-            p 'No Posts Available'
-            redirect :profile
-        end
+    @post.save
+    $posts = Post.all
+
+    if @post.post_category == 'local'
+        redirect :local
+    elsif @post.post_category == 'global'
+        redirect :global
     else 
-        p 'CANT POST'
+        p 'No Posts Available'
+        redirect :profile
     end
-end
-
-# ADDING EDITING CAPABILITIES TO POSTING TO FORUMS
-
-patch '/local' do
-    # some function
-    redirect :local
-end
-
-patch '/global' do
-    # some function
-    redirect :global
 end
 
 # DELETING ACCOUNT
@@ -190,6 +169,22 @@ post '/settings' do
     user.destroy
     session.clear
     redirect '/'
+end
+
+# ACTUAL DELETE PAGE 
+
+get '/delete' do
+    erb :delete
+end
+
+post '/delete' do
+    redirect '/'
+end
+
+# ERRORS 
+
+get '/error' do
+    erb :error
 end
 
 require './models'
